@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pokeapi.ui.main.MainFragment"
+        android:label="Покемоооны"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.example.pokeapi.ui.additional.PokemonFragment"
+        android:label="Покемон"
+        tools:layout="@layout/fragment_pokemon">
+        <action
+            android:id="@+id/action_pokemonFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_pokemonFragment_to_pokemonTypeFragment"
+            app:destination="@id/pokemonTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonTypeFragment"
+        android:name="com.example.pokeapi.ui.additional.PokemonTypeFragment"
+        android:label="Тип покемона"
+        tools:layout="@layout/fragment_pokemon_type">
+        <action
+            android:id="@+id/action_pokemonTypeFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+    </fragment>
+</navigation>
